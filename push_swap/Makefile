@@ -1,0 +1,42 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/27 12:32:15 by luiberna          #+#    #+#              #
+#    Updated: 2024/01/10 17:00:33 by luiberna         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = push_swap
+
+SRCS = push_swap.c verifiers.c \
+	   Bestfriend/bestfriend.c \
+	   Cost/cost.c Cost/move_less_cost.c \
+	   Moves/swap.c Moves/push.c Moves/rotate.c Moves/rerotate.c \
+	   Sort/sort.c Sort/final_sort.c \
+	   Free/free.c
+
+CC = cc
+
+CFLAGS = -Wall -Werror -Wextra
+
+RM = rm -f
+
+all: $(NAME)
+
+$(NAME): $(SRCS)
+	make -C ./Libft
+	$(CC) $(CFLAGS) $(SRCS) ./Libft/libft.a -o $(NAME)
+
+clean:
+		make clean -C ./Libft
+
+fclean: clean
+		make fclean -C ./Libft
+
+re: fclean $(NAME)
+
+.PHONY: all clean fclean re
