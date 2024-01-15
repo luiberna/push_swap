@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:18 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/10 17:15:58 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:54:41 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ t_stack *set_stack(int argc, char **argv)
         curr = curr->next;
         i++;
     }
+    free_split(args);
     return (start_a);
 }
 void print_stack(t_stack **stack)
@@ -100,8 +101,8 @@ int main(int argc, char **argv)
     start_a = set_stack(argc, argv);
     stack_a = &start_a;
     stack_b = &start_b;
-    if(is_sorted(stack_a) || veri_dup(stack_a))
-        return(write(2, "Error\n", 6));
+    if( (is_sorted(stack_a) ) || (veri_dup(stack_a)))
+        return(free_stack(stack_a) ,write(2, "Error\n", 6));
     else
         sort(stack_a, stack_b);
     free_stack(stack_a);

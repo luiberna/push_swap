@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:35 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/10 16:59:06 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:23:23 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ void	move_less_cost(t_stack **stack_a, t_stack **stack_b);
 
 //free
 void	free_stack(t_stack **stack_a);
+void free_split(char **args);
 
 #endif

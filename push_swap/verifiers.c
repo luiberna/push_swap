@@ -6,11 +6,21 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:49:13 by luiberna          #+#    #+#             */
-/*   Updated: 2023/12/18 16:52:00 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/15 14:58:08 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void free_split(char **args)
+{
+    int i;
+
+    i = 0;
+    while (args[i])
+        free(args[i++]);
+    free(args);
+}
 
 int veri_not_nb(char **args)
 {
@@ -24,10 +34,12 @@ int veri_not_nb(char **args)
         temp_atoi = ft_atoi(args[j]);
         temp_itoa = ft_itoa(temp_atoi);
         if(ft_strncmp(temp_itoa, args[j], ft_strlen(args[j])))
-            return(1);
+            return(free(temp_itoa),free_split(args),1);
         else
             j++;
+        free(temp_itoa);
     }
+    free_split(args);
     return(0);
 }
 int veri_dup(t_stack **stack_a)

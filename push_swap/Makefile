@@ -19,6 +19,8 @@ SRCS = push_swap.c verifiers.c \
 	   Sort/sort.c Sort/final_sort.c \
 	   Free/free.c
 
+OBJS = $(SRCS:.c=.o)
+
 CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
@@ -27,15 +29,17 @@ RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
+$(NAME): $(OBJS)
 	make -C ./Libft
-	$(CC) $(CFLAGS) $(SRCS) ./Libft/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) ./Libft/libft.a -o $(NAME)
 
 clean:
 		make clean -C ./Libft
+		rm -f $(OBJS)
 
 fclean: clean
 		make fclean -C ./Libft
+		rm -f $(NAME)
 
 re: fclean $(NAME)
 
