@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:48:48 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/10 17:00:02 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/16 15:18:48 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	move_down_a(t_stack **stack_a, t_stack *node_b)
 {
-	while ((*stack_a) != get_bestfriend(stack_a, node_b)) //node_b->bestfriend
+	while ((*stack_a) != node_b->bestfriend)
 	{
 		rerotate_a(stack_a);
 	}
@@ -51,14 +51,14 @@ void	move_stack_a(t_stack **stack_a, t_stack **stack_b)
 		i++;
 	}
 	curr = (*stack_a);
-	while (curr != get_bestfriend(stack_a, (*stack_b))) //(*stack_b)->bestfriend
+	while (curr != (*stack_b)->bestfriend)
 	{
 		curr = curr->next;
 		n++;
 	}
 	if (n <= i / 2)
 	{
-		while ((*stack_a) != get_bestfriend(stack_a, (*stack_b))) //(*stack_b)->bestfriend
+		while ((*stack_a) != (*stack_b)->bestfriend)
 			rotate_a(stack_a);
 	}
 	else

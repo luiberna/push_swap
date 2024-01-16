@@ -15,7 +15,7 @@
 t_stack	*get_bestfriend(t_stack **stack_a, t_stack *stack_b)
 {
 	t_stack	*curr;
-	t_stack *curr2;
+	t_stack	*curr2;
 
 	curr = (*stack_a);
 	while (curr != NULL)
@@ -25,7 +25,8 @@ t_stack	*get_bestfriend(t_stack **stack_a, t_stack *stack_b)
 			curr2 = curr;
 			while (curr2 != NULL)
 			{
-				if (curr->content > curr2->content && curr2->content > stack_b->content)
+				if (curr->content > curr2->content
+					&& curr2->content > stack_b->content)
 					curr = curr2;
 				curr2 = curr2->next;
 			}
