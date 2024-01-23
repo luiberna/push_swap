@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:35 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/23 15:18:37 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:18:32 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stack
 int					veri_not_nb(char **args);
 int					veri_dup(t_stack **stack_a);
 int					is_sorted(t_stack **stack_a);
+void				normalize_nb(t_stack *stack_a);
 
 // moves
 // swap

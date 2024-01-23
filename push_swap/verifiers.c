@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:49:13 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/23 14:16:33 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:17:36 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,23 @@ int	is_sorted(t_stack **stack_a)
 			return (0);
 	}
 	return (1);
+}
+
+void	normalize_nb(t_stack *stack_a)
+{
+	t_stack		*tmp;
+	t_stack		*tmp2;
+
+	tmp = stack_a;
+	while (tmp)
+	{
+		tmp2 = stack_a;
+		while (tmp2)
+		{
+			if (tmp->real > tmp2->real)
+				tmp->content++;
+			tmp2 = tmp2->next;
+		}
+		tmp = tmp->next;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:53:04 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/23 14:19:30 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:18:04 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void	short_sort(t_stack **stack)
 
 void	push_all_b(t_stack **stack_a, t_stack **stack_b)
 {
-	int	len;
-	int	avg;
+	int			len;
+	int			avg;
 	long long	sum;
 
 	len = get_len(*stack_a);
