@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:53:04 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/16 15:23:15 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:19:30 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	get_len(t_stack *stack_a)
 
 int	get_sum(t_stack *curr)
 {
-	int	sum;
+	long long int	sum;
 
 	sum = 0;
 	while (curr)
@@ -60,7 +60,7 @@ void	push_all_b(t_stack **stack_a, t_stack **stack_b)
 {
 	int	len;
 	int	avg;
-	int	sum;
+	long long	sum;
 
 	len = get_len(*stack_a);
 	while (len > 3)

@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:18 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/16 15:36:38 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:19:54 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,24 @@ void	print_stack(t_stack **stack)
 		curr = curr->next;
 	}
 }
+void normalize_nb(t_stack *stack_a)
+{
+	t_stack	*tmp;
+	t_stack *tmp2;
+
+	tmp = stack_a;
+	while (tmp)
+	{
+		tmp2 = stack_a;
+		while (tmp2)
+		{
+			if (tmp->real > tmp2->real)
+				tmp->content++;
+			tmp2 = tmp2->next;
+		}
+		tmp = tmp->next;
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -91,22 +109,20 @@ int	main(int argc, char **argv)
 	t_stack	*start_b;
 	char	**args;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	start_a = NULL;
 	start_b = NULL;
 	if (argc < 2)
-		return (write(2, "Error\n", 6));
+		return (0);
 	args = get_args(argc, argv);
 	if (veri_not_nb(args))
-		return (write(2, "Error invalid char\n", 20));
+		return (write(2, "Error\n", 6));
 	start_a = set_stack(argc, argv);
+	normalize_nb(start_a);
 	stack_a = &start_a;
 	stack_b = &start_b;
 	if (veri_dup(stack_a))
 		return (free_stack(stack_a), write(2, "Error\n", 6));
 	if (is_sorted(stack_a))
-		return (free_stack(stack_a), 1);
+		return (free_stack(stack_a), 0);
 	else
 		sort(stack_a, stack_b);
 	free_stack(stack_a);

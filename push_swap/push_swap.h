@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:35 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/15 14:23:23 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:18:37 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@
 typedef struct s_stack
 {
 	struct s_stack	*next;
-	int				content;
+	long int		content;
+	long int		real;
 	struct s_stack	*bestfriend;
-	int				cost;
+	long int		cost;
 }					t_stack;
 
 // verifiers

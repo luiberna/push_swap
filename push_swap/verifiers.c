@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:49:13 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/16 15:38:13 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:16:33 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int	veri_not_nb(char **args)
 	{
 		temp_atoi = ft_atoi(args[j]);
 		temp_itoa = ft_itoa(temp_atoi);
-		if (ft_strncmp(temp_itoa, args[j], ft_strlen(args[j])))
+		if (ft_strncmp(temp_itoa, &args[j][args[j][0] == '+'], \
+		ft_strlen(args[j]) - args[j][0] == '+'))
 			return (free(temp_itoa), free_split(args), 1);
 		else
 			j++;

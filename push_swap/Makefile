@@ -6,7 +6,7 @@
 #    By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/27 12:32:15 by luiberna          #+#    #+#              #
-#    Updated: 2024/01/10 17:00:33 by luiberna         ###   ########.fr        #
+#    Updated: 2024/01/23 16:45:28 by luiberna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	make -C ./Libft
-	$(CC) $(CFLAGS) $(OBJS) ./Libft/libft.a -o $(NAME)
+	$(CC) $(OBJS) ./Libft/libft.a -o $(NAME)
 
 clean:
 		make clean -C ./Libft
