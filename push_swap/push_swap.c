@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:18 by luiberna          #+#    #+#             */
-/*   Updated: 2024/02/05 16:23:50 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/02/05 17:35:43 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	main(int argc, char **argv)
 	t_stack	*start_a;
 	t_stack	*start_b;
 	char	**args;
-	
+
 	start_b = NULL;
 	if (argc < 2)
 		return (0);

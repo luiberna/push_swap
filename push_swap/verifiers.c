@@ -6,11 +6,22 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:49:13 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/23 18:17:36 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/02/05 17:40:59 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_n(char *a, char *b)
+{
+	while (*a == ' ' || (*a >= 9 && *a <= 13))
+		a++;
+	if (*a == '+')
+		a++;
+	if (!a[0])
+		return (1);
+	return (ft_strncmp(a, b, ft_strlen(a)));
+}
 
 int	veri_not_nb(char **args)
 {
@@ -23,8 +34,7 @@ int	veri_not_nb(char **args)
 	{
 		temp_atoi = ft_atoi(args[j]);
 		temp_itoa = ft_itoa(temp_atoi);
-		if (ft_strncmp(temp_itoa, &args[j][args[j][0] == '+'], \
-		ft_strlen(args[j]) - args[j][0] == '+'))
+		if (check_n(args[j], temp_itoa))
 			return (free(temp_itoa), free_split(args), 1);
 		else
 			j++;
