@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:18 by luiberna          #+#    #+#             */
-/*   Updated: 2024/01/23 18:31:21 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/02/05 16:23:50 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ t_stack	*create_node(char *args)
 	node = malloc(sizeof(t_stack));
 	if (!node)
 		return (NULL);
-	node->content = ft_atoi(args);
+	node->real = ft_atoi(args);
+	node->content = 0;
 	node->next = NULL;
 	return (node);
 }
@@ -90,7 +91,7 @@ int	main(int argc, char **argv)
 	t_stack	*start_a;
 	t_stack	*start_b;
 	char	**args;
-
+	
 	start_b = NULL;
 	if (argc < 2)
 		return (0);
