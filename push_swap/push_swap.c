@@ -6,7 +6,7 @@
 /*   By: luiberna <luiberna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 21:35:18 by luiberna          #+#    #+#             */
-/*   Updated: 2024/02/05 17:35:43 by luiberna         ###   ########.fr       */
+/*   Updated: 2024/02/07 16:45:22 by luiberna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	args = get_args(argc, argv);
+	if (!args || !args[0])
+		return (free(args), 1);
 	if (veri_not_nb(args))
 		return (write(2, "Error\n", 6));
 	start_a = set_stack(argc, argv);
